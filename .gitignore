@@ -1,3 +1,7 @@
+# Docs
+*.docx
+*.doc
+*.odt
 # Logs
 logs
 *.log
