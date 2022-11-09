@@ -8,17 +8,30 @@ router.get('/', function(req, res, next) {
 
 /* Standart baratroom */
 router.get('/standart', function(req, res, next) {
-  res.send("<h1>Standart Baratroom page</h1>")
+  res.render("podpivas", {
+    title: "Standart Baratroom",
+    picture: "images/standart.jpg",
+    desc: "Standart Baratroom (Podpivas) from DotA 2"
+  });
 });
 
 /* Fury baratroom */
 router.get('/fury', function(req, res, next) {
-  res.send("<h1>Fury Baratroom page</h1>")
+    res.render('podpivas', {
+    title: "Fury_Baratroom",
+    picture: "images/fury.jpg",
+    desc: "Skin 'Fury' Baratroom (Podpivas) from DotA 2"
+
+  });
 });
 
 /* DotA-AllStars baratroom */
 router.get('/dota1', function(req, res, next) {
-  res.send("<h1>DotA1 Baratroom page</h1>")
+  res.render("podpivas", {
+    title: "Old Baratroom",
+    picture: "images/dota1.jpg",
+    desc: "Old Baratroom (Podpivas) from DotA 1"
+  });
 });
 
 module.exports = router;
