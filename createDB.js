@@ -10,7 +10,7 @@ var database = client.db("baratroom");
 database.dropDatabase()
 database = client.db("baratroom");
 const bara = database.collection("bara");
-const result = await bara.insertOne({name:"Подпивасик"});
+const result = await bara.insertMany(data);
 console.log(`bara ${result} documents were inserted`);
 } finally {
 await client.close();
