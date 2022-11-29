@@ -1,14 +1,15 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb://127.0.0.1:27017/test1')
+var Bara = require("./models/bara").Bara
 
-var schema = mongoose.Schema({ name: String })
-schema.methods.charge = function(){
-    console.log(this.get("name") + " fueled with beer")
-}
 
-var Bara = mongoose.model('Bara', schema)
+var baratroomchik = new Bara({
+title: "Baratroom",
+nick: "Baratroom_Standart"
+})
 
-var baratroomchik = new Bara({ name: 'Baratroom' })
-baratroomchik.save(function (err) {
-    baratroomchik.charge()
+
+console.log(baratroomchik)
+baratroomchik.save(function(err, baratroomch, affected){
+console.log(baratroomch.title)
 })
