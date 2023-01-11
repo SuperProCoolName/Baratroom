@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Bara = require('../models/bara').Bara
 
 
 /* GET users listing. */
