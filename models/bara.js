@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-var baraSchema = new Schema({
+var Bara = new Schema({
 title: String,
 nick: {
 type: String,
@@ -16,4 +16,4 @@ type:Date,
 default:Date.now
 }
 })
-module.exports.Bara = mongoose.model("Bara", baraSchema)
+module.exports.Bara = mongoose.model("Bara", Bara)
