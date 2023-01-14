@@ -41,15 +41,12 @@
   <li class="nav-item">
   <a class="nav-link" href="/">Index</a>
   </li>
-  <li class="nav-item">
-  <a class="nav-link" href="podpivasiki/standart">Standart</a>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link" href="podpivasiki/fury">Fury set</a>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link" href="podpivasiki/dota1">DotA 1</a>
-  </li>
+  <% menu.forEach(function(bara){ %>
+    <li class="nav-item">
+    <a class="nav-link" href="/podpivas/<%=bara.nick%>">
+        <%=bara.title%> </a>
+    </li>
+    <% }) %>
   </ul>
   <ul class="navbar-nav navbar-right">
   <li>
