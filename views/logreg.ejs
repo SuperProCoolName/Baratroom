@@ -6,22 +6,22 @@
         <div class="form-group">
             <label class="control-label col-sm-1">Name</label>
             <div class="col-sm-5">
-                <input class="form-control" type="text"
-                   placeholder="Enter name" name="username"/>
+                <input class="form-control" type="text" placeholder="Enter name" name="username" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-1">Password</label>
             <div class="col-sm-5">
-                <input class="form-control" type="password" 
-                 placeholder="Enter password" name="password"/>
+                <input class="form-control" type="password" placeholder="Enter password" name="password" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-1 col-sm-5">
-                <input class="btn btn-primary" type="submit"
-                                               value="Log in"/>
+                <input class="btn btn-primary" type="submit" value="Log in" />
             </div>
         </div>
+        <% if(error) { %>
+            <div class="alert alert-danger"><%= error %></div>
+        <% } %>
     </form>
-    
+</div>

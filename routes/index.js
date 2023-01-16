@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 /* GET login/registration page. */
 router.get('/logreg', function(req, res, next) {
-    res.render('logreg',{title: 'Log in'});
+    res.render('logreg',{title: 'Log in', error:null});
     
 
     });
@@ -34,7 +34,7 @@ router.post('/logreg', function(req, res, next) {
                 req.session.user = user._id
                 res.redirect('/')
             } else {
-                      res.render('logreg', {title: 'Log in'})
+                      res.render('logreg', {title: 'Log in', error:"Password is incorrect"})
             }
         } else {
             var user = new User({username:username,password:password})
