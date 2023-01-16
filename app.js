@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/baratroom');
 var session = require('express-session');
 var podpivasiki = require('./routes/podpivasiki');
+var Bara = require('./models/bara').Bara
 
 
 var indexRouter = require('./routes/index');
@@ -26,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var MongoStore = require('connect-mongo'); (session);
-app.use(session({
+app.use(session({ 
   secret: "DotaBara",
   cookie:{maxAge:60*1000},
   resave: true,
@@ -39,7 +40,17 @@ app.use(function(req,res,next){
   next()
 })
 
+app.use(function(req,res,next){
+  res.locals.nav = []
 
+  Bara.find(null,{_id:0,title:1,nick:1},function(err,result){
+      if(err) throw err
+      res.locals.nav = result
+      next()
+  })
+})
+
+app.use(require('./middleware/createMenu.js'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/podpivasiki', podpivasiki)

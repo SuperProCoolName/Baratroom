@@ -7,24 +7,13 @@ var Bara = require("../models/bara").Bara
 
 router.get('/', function(req, res, next) {
     Bara.find({},{_id:0,title:1,nick:1},function(err,menu){
+        req.session.greeting = "Session started"
         res.render('index', {
-                                title: 'Express',
-                                menu: menu
+                                title: 'Baratroom',
+                                counter: req.session.counter
                             });
     })
 
 });
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { 
-    title: 'Express',
-    menu:menu,
-    counter:req.session.counter 
-});
-});
-
-
-
 
 module.exports = router;
