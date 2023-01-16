@@ -1,25 +1,27 @@
 <% layout('./layout/page.ejs') %>
 <div class="conteiner">
-    <h1>Sign up and logging in</h1>
+    <h1>Sign up and log in</h1>
     <p>Enter login and password, if we don't have that user it will be created.</p>
-    <form class="form-horizontal">
+    <form class="form-horizontal" action="/logreg" method="post">
         <div class="form-group">
             <label class="control-label col-sm-1">Name</label>
             <div class="col-sm-5">
-                <input class="form-control" type="text" placeholder="Enter name" />
+                <input class="form-control" type="text"
+                   placeholder="Enter name" name="username"/>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-1">Password</label>
             <div class="col-sm-5">
-                <input class="form-control" type="password" placeholder="Enter password" />
+                <input class="form-control" type="password" 
+                 placeholder="Enter password" name="password"/>
             </div>
         </div>
-        <br>
         <div class="form-group">
             <div class="col-sm-offset-1 col-sm-5">
-                <input class="btn btn-primary" type="submit" value="Log in" />
+                <input class="btn btn-primary" type="submit"
+                                               value="Log in"/>
             </div>
         </div>
     </form>
-</div>
+    
